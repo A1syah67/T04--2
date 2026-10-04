@@ -553,7 +553,7 @@ svg {
 
 /* Default D3 shape & text styling using palette variables */
 svg rect.bar{
-  fill: var(--orange);
+  fill: steelblue;
   transition: fill 0.2s ease;
 }
 
