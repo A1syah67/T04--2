@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 
@@ -568,6 +567,7 @@ svg text {
   fill: var(--brown-deep);
 }
 
+
 /* =========================================================
    RESPONSIVE SVG CONTAINER (T04-3)
    ========================================================= */
@@ -577,6 +577,7 @@ svg text {
   width: 100%;    /* fill parent width */
   max-width: 1200px; /* cap max width */
 }
+
 
 /* =========================================================
    CONCLUSION
@@ -714,3 +715,4 @@ svg text {
   }
 
 }
+
