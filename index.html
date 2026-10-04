@@ -59,36 +59,33 @@
     </nav>
   </header>
 
-  <!-- Main content elements for D3 tasks -->
-  <main id="main-content">
-    <h1>Appliance Energy Consumption</h1>
-    <div id="content"></div>
+  <!-- Reset body elements for D3 task -->
+  <h1>Appliance Energy Consumption</h1>
+  <div id="content"></div>
 
-    <!-- Give the SVG a size so shapes can be seen -->
-    <svg width="300" height="150"></svg>
-
-    <!-- NEW: Container for T04-3 chart -->
-    <div class="responsive-svg-container"></div>
-  </main>
+  <!-- Give the SVG a size so shapes can be seen -->
+  <svg width="300" height="150"></svg>
 
   <!-- Footer intact -->
   <footer class="site-footer">
+
     <div class="footer-inner">
-      <p>&copy; <span id="current-year">2026</span> Aisyah Salsabila</p>
-      <p>Built as a coursework activity · GenAI was used to help write this code</p>
+
+      <p>
+        &copy; <span id="current-year">2026</span> Aisyah Salsabila
+      </p>
+
+      <p>
+        Built as a coursework activity · GenAI was used to help write this code
+      </p>
+
     </div>
+
   </footer>
 
-  <!-- D3.js Library -->
+  <!-- Load D3 first, then your D3 code file placed immediately before closing </body> -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-
-  <!-- Script for D3 tasks -->
   <script src="energy-d3.js"></script>
-
-  <!-- Old T04-2 demo (temporarily disabled) -->
-  <!-- <script src="t04-3-bars.js"></script> -->
-
-  <!-- Main site script -->
   <script src="script.js"></script>
 
 </body>
