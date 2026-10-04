@@ -552,13 +552,13 @@ svg {
 }
 
 /* Default D3 shape & text styling using palette variables */
-svg rect {
-  fill: var(--blue);
+svg rect.bar{
+  fill: var(--orange);
   transition: fill 0.2s ease;
 }
 
 svg rect:hover {
-  fill: var(--orange-deep);
+  fill: var(--blue);
 }
 
 svg text {
