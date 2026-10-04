@@ -553,7 +553,7 @@ svg {
 
 /* Default D3 shape & text styling using palette variables */
 svg rect {
-  fill: var(--orange);
+  fill: var(--blue);
   transition: fill 0.2s ease;
 }
 
