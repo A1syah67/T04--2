@@ -11,4 +11,4 @@ svg
   .attr("y", 10)
   .attr("width", 414)
   .attr("height", 16)
-  .attr("fill", "blue");
+  .style("fill", "blue"); // Using .style() overrides CSS file rules
