@@ -60,14 +60,16 @@
   </header>
 
   <!-- Main content elements for D3 tasks -->
-  <h1>Appliance Energy Consumption</h1>
-  <div id="content"></div>
+  <main id="main-content">
+    <h1>Appliance Energy Consumption</h1>
+    <div id="content"></div>
 
-  <!-- Give the SVG a size so shapes can be seen -->
-  <svg width="300" height="150"></svg>
+    <!-- Give the SVG a size so shapes can be seen -->
+    <svg width="300" height="150"></svg>
 
-  <!-- NEW: Container for T04-3 chart -->
-  <div class="responsive-svg-container"></div>
+    <!-- NEW: Container for T04-3 chart -->
+    <div class="responsive-svg-container"></div>
+  </main>
 
   <!-- Footer intact -->
   <footer class="site-footer">
@@ -77,15 +79,16 @@
     </div>
   </footer>
 
-  <!-- D3 library -->
+  <!-- D3.js Library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
-  <!-- NEW: JS for T04-3 only -->
-  <script src="t04-3-bars.js"></script>
+  <!-- Script for D3 tasks -->
+  <script src="energy-d3.js"></script>
 
   <!-- Old T04-2 demo (temporarily disabled) -->
-  <!-- <script src="energy-d3.js"></script> -->
+  <!-- <script src="t04-3-bars.js"></script> -->
 
+  <!-- Main site script -->
   <script src="script.js"></script>
 
 </body>
