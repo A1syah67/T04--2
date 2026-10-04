@@ -1,21 +1,55 @@
-// 1. Select the <h1> tag and change its text color to green
-d3.select("h1")
-  .style("color", "green");
+// Sample Appliance Energy Data (kWh/year)
+const energyData = [
+  { appliance: "Television", energy: 150 },
+  { appliance: "Refrigerator", energy: 400 },
+  { appliance: "Washing Machine", energy: 250 },
+  { appliance: "Air Conditioner", energy: 800 },
+  { appliance: "Dishwasher", energy: 200 }
+];
 
-// 2. Select the first <div> (#content), append a paragraph <p>, and set its text
-d3.select("div")
-  .append("p")
-  .text("Purchasing a low energy consumption TV will help with your energy bills!");
+// 1. Set dimensions and margins
+const margin = { top: 30, right: 20, bottom: 60, left: 60 };
+const width = 600 - margin.left - margin.right;
+const height = 350 - margin.top - margin.bottom;
 
-// 3. Append an empty <rect> (invisible in SVG, visible in DOM)
-d3.select("svg")
-  .append("rect");
+// 2. Select the responsive container and append the SVG canvas
+const svg = d3.select(".responsive-svg-container")
+  .append("svg")
+  .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+  .append("g")
+  .attr("transform", `translate(${margin.left},${margin.top})`);
 
-// 4. Append a second <rect> with x, y, width, height, and green fill
-d3.select("svg")
-  .append("rect")
-  .attr("x", 50)
-  .attr("y", 50)
-  .attr("width", 100)
-  .attr("height", 30)
-  .style("fill", "green");
+// 3. Set X scale (Categorical Band scale for appliances)
+const xScale = d3.scaleBand()
+  .domain(energyData.map(d => d.appliance))
+  .range([0, width])
+  .padding(0.3);
+
+// 4. Set Y scale (Linear scale for energy consumption)
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(energyData, d => d.energy)])
+  .nice()
+  .range([height, 0]);
+
+// 5. Render X Axis
+svg.append("g")
+  .attr("transform", `translate(0, ${height})`)
+  .call(d3.axisBottom(xScale))
+  .selectAll("text")
+  .attr("transform", "rotate(-20)")
+  .style("text-anchor", "end");
+
+// 6. Render Y Axis
+svg.append("g")
+  .call(d3.axisLeft(yScale));
+
+// 7. Bind Data and Append Rectangles (Bars)
+svg.selectAll(".bar")
+  .data(energyData)
+  .join("rect")
+  .attr("class", "bar")
+  .attr("x", d => xScale(d.appliance))
+  .attr("y", d => yScale(d.energy))
+  .attr("width", xScale.bandwidth())
+  .attr("height", d => height - yScale(d.energy))
+  .attr("fill", "#2e7d32");
