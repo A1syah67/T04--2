@@ -52,4 +52,4 @@ svg.selectAll(".bar")
   .attr("y", d => yScale(d.energy))
   .attr("width", xScale.bandwidth())
   .attr("height", d => height - yScale(d.energy))
-  .attr("fill", "blue");
+  .attr("fill", "#2e7d32");
